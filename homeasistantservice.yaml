@@ -1,16 +1,17 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: home-assistant-service
+  name: homeassistant-service
   labels:
-    app: home-assistant
+    app: homeassistant
 spec:
   type: NodePort
   selector:
-    app: home-assistant
+    app: homeassistant
   ports:
     - name: http
       protocol: TCP
       port: 8123
       targetPort: 8123
+
       nodePort: 31099
