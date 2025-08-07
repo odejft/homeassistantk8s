@@ -1,12 +1,12 @@
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: homeassistant
+  namespace: default
   labels:
     app: homeassistant
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: homeassistant
@@ -27,3 +27,5 @@ spec:
         - name: config-volume
           persistentVolumeClaim:
             claimName: homeassistantpvc
+
+
